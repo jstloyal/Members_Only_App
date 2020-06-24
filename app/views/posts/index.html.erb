@@ -1,7 +1,47 @@
-<section class="section">
-  <div class="container">
-    <div class="columns">
-      <%= render 'feed' %>
+<div class="column iscentered">
+  <section class="section">
+    <div class="container">
+      <div class="column is-centered">
+
+        <h1 class="is-center">All posts</h1>
+
+        <% if user_signed_in? %>
+        	<% @posts.each do |post| %>
+        	<div class="row font-s">
+        		<div class="col-xs-8 col-xs-offset-2">
+        			<div class="well well-lg">
+        				<div class="post-title">
+        					<%= link_to post.title, root_path %>
+        				</div>
+        				<div class="post-body">
+        					<%= truncate(post.body, length: 200) %>
+        					<div class="post-meta-details">
+        						<small><span>Created by: <%= post.user.name %></span><br>
+        						</small>
+        					</div>
+        				</div>
+        			</div>
+        		</div>
+        	</div>
+        	<% end %>
+        <% else %>
+        	<% @posts.each do |post| %>
+        	<div class="row font-s">
+        		<div class="col-xs-8 col-xs-offset-2">
+        			<div class="well well-lg">
+        				<div class="post-title">
+        					<%= link_to post.title, root_path %>
+        				</div>
+        				<div class="post-body">
+        					<%= truncate(post.body, length: 200) %>
+        				</div>
+        			</div>
+        		</div>
+        	</div>
+        	<% end %>
+        <% end %>
+
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+</div>
