@@ -36,7 +36,7 @@ In this project, I build a member only blog using rails-6
     This project is part of the Microverse curriculum in Ruby on Rails module!
     <br />
     <a href="https://github.com/jstloyal/Members_Only_App">
-      <img src="app/assets/images/member_only.png" alt="Microverse Logo" width="1000" height="500">
+      <img src="app/assets/images/member_only.png" alt="Microverse Logo" width="1000" height="400">
     </a><br />
     <a href="https://github.com/jstloyal/Members_Only_App"><strong>Explore the docs »</strong></a>
     <br />
