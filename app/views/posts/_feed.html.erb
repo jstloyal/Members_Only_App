@@ -1,0 +1,23 @@
+<div class="column is-centered">
+   <% if user_signed_in? %>
+   <article class="media box">
+     <div class="media-content">
+       <%= render 'posts/form' %>
+     </div>
+   </article>
+   <% end %>
+
+ <% @posts.each do | post | %>
+  <div class="box">
+    <article class="media is-success">
+      <div class="media-content">
+        <div class="content is-success">
+          <strong>Name</strong><br/>
+          <small>uername</small><br/>
+
+        </div>
+      </div>
+    </article>
+  </div>
+ <% end %>
+</div>

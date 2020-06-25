@@ -1,0 +1,37 @@
+<div class="section">
+	<div class="container">
+		<div class="columns is-centered">
+
+			<div class="column is-4">
+
+				<h2 class="title is-2 has-text-success">Login to MembersOnly</h2>
+
+				<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+
+						<div class="field">
+							<div class="control">
+								<%= f.input :email, required: true, input_html: { class:"input has-text-success" }, wrapper: false, label_html: { class:"label has-text-success" } %>
+							</div>
+						</div>
+
+						<div class="field">
+							<div class="control">
+								<%= f.input :password, required: true, input_html: { class:"input has-text-success" }, wrapper: false, label_html: { class:"label has-text-success" }, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+							</div>
+						</div>
+
+            <div class="field">
+				  	  <div class="control has-text-success" >
+				        <%= f.input :remember_me, wrapper: false, as: :boolean if devise_mapping.rememberable? %>
+				  	  </div>
+					  </div>
+
+						<%= f.button :submit, "Log in", class:"button is-success is-medium" %>
+
+				<% end %>
+				<br />
+				<%= render "devise/shared/links" %>
+			</div>
+		</div>
+	</div>
+</div>
